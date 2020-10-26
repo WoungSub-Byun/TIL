@@ -2,7 +2,7 @@
 
 -  오늘 배운 것들은 오늘 적자
   
-![img](https://i1.daumcdn.net/thumb/C300x240/?fname=https://blog.kakaocdn.net/dn/3H0pg/btqEAMKeaky/UIxtAXObYwrlnsvTY1WdY0/img.jpg) "Today I learned"
+![img](https://i1.daumcdn.net/thumb/C300x240/?fname=https://blog.kakaocdn.net/dn/3H0pg/btqEAMKeaky/UIxtAXObYwrlnsvTY1WdY0/img.jpg) 
 ### 작성규칙
 ---
  - 오늘 하루 배운 것들을 적기
