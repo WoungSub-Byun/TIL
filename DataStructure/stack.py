@@ -1,20 +1,21 @@
 class Solution:
 
-    stack = []
+    def __init__(self):
+        self.stack = []
+        self.TOP = -1
 
     def pop(self):
-        behind_data = self.stack[-1]
-        del stack[-1]
-        return behind_data
+        del self.stack[self.TOP]
+        self.TOP -= 1
+        return self.stack
 
     def push(self, item):
-        return self.stack.insert(-1, item)
+        self.TOP += 1
+        self.stack.insert(self.TOP, item)
+        return self.stack
 
     def peek(self):
-        return self.stack[-1]
+        return self.stack[self.TOP]
 
     def isEmpty(self):
-        if len(stack) == 0:
-            return True
-        else:
-            return False
+        return self.TOP == -1 and True or False
