@@ -50,14 +50,16 @@
 ---
 ![dockerimage](https://subicura.com/assets/article_images/2017-01-19-docker-guide-for-beginners-1/docker-image.png)
 
+- 특정 프로세스를 실행하기 위한 환경
 -  **컨테이너 실행에 필요한 파일과 설정값등을 포함하고 있는 것**
+-  **게층화**된 파일 시스템 
 - 즉, 컨테이너는 이미지를 실행한 상태라고 볼 수 있습니다.
 - 이미지는 컨테이너를 실행하기 위한 모든 정보를 가지고 있기 때문에 더 이상 의존성 파일을 컴파일하고 이것저것 설치할 필요가 없습니다.
 - 누구나 도커 이미지를 [Docker hub](https://hub.docker.com/)에 등록하거나 [Docker Registry](https://docs.docker.com/registry/)를 직접 만들어 관리할 수 있습니다.
 
 
 ## 컨테이너가 필요한 이유
-- **컴퓨터의 환경은 보편적이지 않습니다.**
+- ***컴퓨터의 환경은 보편적이지 않습니다.***
   - 컴퓨터는 OS, 버전, 시스템 설정, 설치된 소프트웨어 등 다양한 환경이 존재합니다.
   - 상태관리를 할 경우 여러 시스템에 같은 환경을 제공해야하는데 거의 불가능... 아주 어렵습니다.
   - 하지만 Docker는 이미지를 통해 **꺠끗하고 동일한 환경을 제공**하기 때문에 손쉽게 상태관리가 가능합니다.
@@ -69,10 +71,16 @@
 
 
 
+
+
 ## Docker Command
-```bash
+---
+### 이미지 실행
+```
 docker run (<옵션>) [이미지 식별자] (<명령어>) (<인자>)
 ```
+- 이미지가 다운로드 되어있지 않은 경우에는 해당 이미지 자동 다운로드
+
 - Options
   - -d : 컨테이너 백그라운드 실행
 ```
@@ -84,3 +92,56 @@ docker run -d exampleimage/exampleimage
   ```
   - -w : Dockerfile의 WORKDIR 설정을 덮어쓰기 위해 사용
   - --rm : 컨테이너를 일회성으로 실행할 때 주로 사용
+  
+### 설치된 이미지들 확인
+```
+docker images
+```
+
+### 실행된 컨테이너 확인
+```
+docker ps
+```
+
+### 이미지 변경사항 확인
+```
+docker diff [Container ID]
+```
+- 다운로드 받은 Base Image에서 바뀐 모든 파일들 출력
+
+### 새로운 이미지 생성(컨테이너가 존재할 때)
+```
+docker commit [Container ID] [new Image name]:[tag]
+```
+
+> ![imagecustomprocedure](../Image/dockerimagechagingprocedure.png)
+
+### Dockerfile로 이미지 생성
+- Dockerfile
+  - 이미지 생성 과정을 기술한 Docker 전용 DSL
+  - Dockerfile 명령어
+```
+FROM [Base Image] : 베이스 이미지 지정
+
+ADD [추가할 파일] [파일이 추가될 경로] : 파일 추가 (현재 경로 하위에 있는 파일들만 추가 가능)
+
+RUN [명령어] : 명령어 실행
+
+WORKDIR [디렉토리] : 작업 디렉토리 변경
+
+ENV [환경변수명] [VALUE]: 환경변수 기본값 지정
+
+EXPOSE [포트번호] : 컨테이너 실행 시 노출시킬 포트 (expose를 지정하더라도 docker run시에 -p 옵션으로 호스트의 포트와 컨테이너의 포트를 지정해야함)
+
+CMD [명령어] : 이미지의 기본 명령어 설정
+```
+- Dockerfile에 작성된 이미지 빌드
+```
+docker build -t [ID]/[new image name]:[tag] .
+```
+  - . : 해당 경로 하위 파일들을 모두 이미지로 생성
+
+### 이미지 이름 변경
+```
+docekr tag [image name] [new image name]
+```
