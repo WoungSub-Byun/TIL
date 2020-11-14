@@ -145,3 +145,13 @@ docker build -t [ID]/[new image name]:[tag] .
 ```
 docekr tag [image name] [new image name]
 ```
+
+### 이미지 삭제
+```
+docker rmi [image name]
+```
+
+### Docker registry에서 이미지 받아오기
+```
+docker pull [image name]
+```
