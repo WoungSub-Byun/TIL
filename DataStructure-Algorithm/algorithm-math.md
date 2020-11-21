@@ -64,3 +64,33 @@ def gcd(a, b):
 def gcd(a, b):
     return b if a % b == 0 else gcd(b, a%b)
 ```
+
+## 소수와 소인수분해
+---
+
+- 여러가지 소수 판별법
+```python
+# 2부터 N-1까지 체크
+def isPrime(N):
+    for i in range(2, N):
+        if N % i == 0: return False
+    return True
+# 2부터 sqrt(N)까지 체크 
+def isPrime(N):
+    i = 2
+    while i*i <= N:
+        if N % i == 0: return False
+    return True
+```
+### **에라토스테네스의 체**
+> ![eratostenes](https://wikidocs.net/images/page/21638/DC-1707V1.png)
+```python
+def era(N):
+    ck, p = [False for _ in range(N+1)], []
+    for i in range(2, N+1):
+        if ck[i] == True: continue
+        p.append(i)
+        for j in range(i*i, N+1, i):
+            ck[j] = True
+    return ck, p
+```

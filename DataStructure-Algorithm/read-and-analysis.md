@@ -133,4 +133,4 @@ ex) PascalCase, VariableN, ThisIsPascalCase, HowToSolveThisProblem
 > - 클래스는 Pascal 표기법 사용
 > - 모듈 상수는 모두 대문자를 사용하고 단어마다 밑줄로 연결하는 ALL_CAP 포맷 사용 ex) MAX_COUNT = 100
 > - 클래스의 protected instanced attribute는 하나의 밑줄로 시작
-> - 클래스의 privated instanced attirbute는 
+> - 클래스의 privated instanced attirbute는 두개의 밑줄로 시작
