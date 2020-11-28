@@ -23,6 +23,10 @@ class User(Model.models):
 
 
 ### Migration
+- migrate -> 이주하다
+- 즉, django ORM으로 작성된 객체를 실제 데이터베이스로 **이주** 시키는 것
+- ```make migrations``` : 코드로 작성된 모델 객체가 사용가능한지 확인하고 아직 존재하지 테이블에 대한 마이그레이션 파일을 생성
+- ```migrate``` : 마이그레이션을 실행하고 실제 데이터베이스에 테이블을 생성
 ![djangomigratinoprocedure](https://wayhome25.github.io/assets/post-img/django/migration.png)
 ```bash
 # 마이그레이션 파일 생성
@@ -99,3 +103,8 @@ class Post(Model.models):
   - DO_NOTHING
     - ForeignKeyField가 바라보는 값이 삭제될 때 아무런 행동을 취하지 않는다. 참조무결성을 해칠 위험이 있다.
 
+
+## 🚨 복합키 (composite key)
+---
+- Django의 최대 단점 중 하나다. **django의 ORM에서는 복합키를 지원하지 않는다!!**
+> 여기서 복합키란, 하나의 릴레이션에서 하나의 속성으로 기본키가 될 수 없는 경우 **둘 이상의 컬럼을 묶어** 식별자로 지정해주는 것을 말한다.
