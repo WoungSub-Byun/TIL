@@ -20,6 +20,8 @@ JSON Web Token(JWT)는 웹 표준으로서 JSON객체를 사용해 두 개체 �
 
 ---
 
+- **토큰 기반 인증**
+  ![tokenauthimage](https://velopert.com/wp-content/uploads/2016/12/token-diagram.png)
 - 회원 인증
   - 유저가 로그인을 하면 **서버에서 유저의 정보를 기반으로 한 Access Token을 발급**해주고 이 후 **유저는 서버에 해당 Access Token을 포함하여 전달**합니다. **서버는 클라이언트에게서 요청을 받을 때마다 해당 token이 유효하고 인증되었는지 검증을하고 권한이 있는지 확인하여 작업을 처리**합니다.
   - 서버는 유저의 **세션을 따로 저장할 필요가 없기 때문에 서버 자원을 아낄 수 있다는 장점**이 있습니다.
