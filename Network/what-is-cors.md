@@ -8,16 +8,18 @@
 
 ---
 
+![corsimage](https://t1.daumcdn.net/cfile/tistory/256C904258CB85E01E)
+
 - **CORS**: **C**ross **O**rigin **R**esource **S**haring
   **다른 출처로 리소스가 요청될 경우 브라우저에서 응답을 거부하는 정책**
 
-#### ❔ 출처
+> #### ❔ 출처
 
 ![urlimage](https://evan-moon.github.io/static/e25190005d12938c253cc72ca06777b1/6af66/uri-structure.png)
 
 - 서버의 위치를 의미하는 URL들은 여러개의 구성 요소(protocol, host, path, query string, fragment)로 이루어져 있다.
 
-서버가 접근을 허용한 출처(같은 출처)가 아닌 **접근을 허용하지 않은 출처(다른 출처)에서 요청할 경우 브라우저에서 보안상의 이유로 응답을 거부**하는 정책
+즉, 서버가 접근을 허용한 출처(같은 출처)가 아닌 **접근을 허용하지 않은 출처(다른 출처)에서 요청할 경우 브라우저에서 보안상의 이유로 응답을 거부**하는 정책
 
 ## 2️⃣ 동작방식
 
