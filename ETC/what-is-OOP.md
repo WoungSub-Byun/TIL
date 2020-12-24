@@ -89,7 +89,63 @@ class BankBook {
 - 위와 같이 setter, getter를 이용해 보안성을 강화한다.
 
 ### 추상화 - Abstraction
-
+추상화는 객체들이 가진 공통의 특성들을 파악하고 불필요한 특성들을 제거하는 과정이다. 객체들이 가진 동작을 기준으로 메서드를 만드는데, 속성위주가 아닌 동작 위주로 작업 하는 것이 중요하다. 객체의 동작에 연관이 되지 않는 속서들은 격국은 불필요하기 때문에 동작을 먼저 정의하고 동작에 필요한 속성들을 정리하는 것이 좋다.
 ### 다형성 - Polymorphism
+**같은 자료형에 여러 가지 객체를 대입하여 다양한 결과를 얻어내는 성질**을 말한다.
+하나의 타입으로 다양한 결과를 얻을 수 있으며 객체를 부품화하기 때문에 **유지보수가 용이**하다.
+주로 interface를 사용하여 다형성을 구현한다.
+```java
+interface Homework{
+    void readingHw();
+    void writingHw();
+}
+class AClass implements Homework {
+    public void readingHw(){ //Overring
+        System.out.println("운영체제 책 60P까지")
+    }
+    public void writingHw(){ //Overring
+        System.out.println("java 다형성 interface로 구현")
+    }
+}
 
-### 상속성, 재사용 - Inheritance
+class BClass implements Homework {
+    public void readingHw(){ //Overring
+        System.out.println("자료구조 책 45P까지")
+    }
+    public void writingHw(){ //Overring
+        System.out.println("java 상속 구현")
+    }
+}
+public class TestCode01 {
+    public static void main(String[] args){
+        Homework hw1;
+        hw1 = AClass();
+        hw1.readingHw();
+        hw1.writingHw();
+
+        Homework hw2;
+        hw2 = BClass();
+        hw2.readingHw();
+        hw2.writingHw();
+
+    }
+}
+```
+위의 코드처럼, 객체의 특성에 따라서 인터페이스르 통해 위와 같이 다양한 결과를 얻어낼 수 있다.
+
+이것이 바로 **다형성**이다.
+### 상속성 - Inheritance
+OOP의 가장 큰 특성 중 하나가 바로 코드의 재사용성과 상속성이다. 같은 객체를 여러 개 만들어야 하는 경우, 한 번 작성된 코드를 활용하여 동일한 객체를 만들 수 있다.
+```java
+class A {
+    String aField = "afield";
+    public void Amethod(){
+        System.out.println("Class A's Field: ", aField);
+    }
+}
+class B extends A {
+    public void Bmethod(){
+        Amethod()
+    }
+}
+```
