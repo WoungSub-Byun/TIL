@@ -78,22 +78,37 @@ class LinearQueue:
 
 > **원형 큐**
 ```python
-class LinearQueue:
-    def __init__(self):        
+class CircularQueue:
+    def __init__(self):
         self.front = -1
         self.rear = -1
-    
+
     def create_queue(self, size):
-        self.queue = list([0 for i in range(size)]) #python의 list는 null값이 들어갈 수 없기 때문에 0이 빈 값이라고 생각하자
+        # python의 list는 null값이 들어갈 수 없기 때문에 0이 빈 값이라고 생각하자
+        self.queue = list([0 for i in range(size)])
+        print(len(self.queue))
 
     def add(self, item):
-        self.rear += 1
-        self.queue[self.rear] = item
-        
+        if self.isFull:
+            print('배열이 꽉찼습니다.')
+        else:
+            self.rear += 1
+            if self.rear >= len(self.queue):
+                self.rear %= len(self.queue)
+            self.queue[self.rear] = item
+        print(self.queue)
+        print('front: {} rear: {}'.format(self.front, self.rear))
+
     def remove(self):
-        
-        self.front += 1
-        self.queue[self.front] = 0
+        if self.isEmpty:
+            print('배열이 비었습니다.')
+        else:
+            self.front += 1
+            if self.front >= len(self.front):
+                self.front %= len(self.queue)
+            self.queue[self.front] = 0
+        print(self.queue)
+        print('front: {} rear: {}'.format(self.front, self.rear))
 
     def peek(self):
         return self.queue[self.rear]
