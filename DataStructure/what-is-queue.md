@@ -123,3 +123,19 @@ class CircularQueue:
             return True
         return False
 ```
+
+> **실제 코딩테스트에서는 collections 모듈의 deque를 사용하자!**
+
+```python
+from collections import deque
+
+queue = deque()
+
+# 리스트의 append와 같은 동작
+queue.append()
+# 가장 왼쪽에 있는 원소 pop
+queue.popleft()
+
+print(queue) #먼저 들어온 순서대로 출력
+print(queue.reverse()) #나중에 들어온 원소부터 출력
+```
