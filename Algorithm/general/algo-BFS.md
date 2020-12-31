@@ -39,7 +39,6 @@ def bfs(graph, start, visited):
                 queue.append(node) #방문처리되지 않았다면 큐에 넣고
                 visited[node] = True #방문처리해준다.
 
-# BFS는 
 graph = [
     [],
     [2, 3, 8],
