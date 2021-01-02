@@ -7,7 +7,9 @@
 ---
 #### 깊이 우선 탐색
 **DFS - Depth First Search**
+
 ![dfsimg](https://media.vlpt.us/images/sukong/post/b9042f15-fb5b-4272-abe7-8cdeb3f0f22f/DFS.png)
+
 한 방향으로 **인접한 노드가 없을 때까지(가장 깊은 노드까지**) 탐색한 뒤 다른 방향으로 탐색을 하는 방식
 
 
