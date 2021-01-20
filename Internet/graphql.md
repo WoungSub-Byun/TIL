@@ -54,7 +54,7 @@ GraphQL을 만든 Facebook의 블로그에서는
 라고 말합니다.
 따라서 정보를 사용하는 측에서 원하는 대로 정보를 가져올 수 있고, 보다 편하게 정보를 수정할 수 있도록 하는 표준화된 쿼리 언어가 바로 GraphQL입니다.
 
-## GraphQL의 구조
+## ✅ GraphQL의 구조
 
 ### Query/Mutation
 GraphQL의 요청하는 쿼리문과 응답 내용의 구조는 거의 일치합니다.
@@ -101,3 +101,23 @@ QraphQL쿼리에서는 **각각의 필드마다 함수가 하나씩 존재** 한
  이러한 리졸버의 호출은 DFS로 구현되있을거라 추측됩니다. 이것에서 Graph라는 단어를 쓴 이유가 있을 것이라 생각합니다.
 
  연쇄 리졸버 호출은 DBMS간의 관계에 대한 쿼리를 매우 쉽고 효율적으로 처리 할 수 있습니다.
+
+
+ ## 인트로스펙션(introspection)
+ ![gqlapolloide](./../Image/graphql-apollo-ide.png)
+> Apollo Server 라이브러리 용 웹 IDE화면
+
+기존 서버-클라이언트 협업 방식에서는 API 명세서를 주고 받는 절차가 반드시 필요합니다.
+
+GraphQL에서는 RSETAPI 명세서 공유와 같은 문제를 해결하는 것이 바로 인트로스펙션 기능입니다.
+
+GraphQL의 인트로스펙션은 서버 자체엇 현재 서버에 정의된 스키마의 실시간 정보를 공유할 수 있습니다.
+
+## GraphQL 라이브러리
+- [릴레이(Relay)](https://relay.dev/)
+- [아폴로(Apollo GraphQL)](https://www.apollographql.com/)
+
+
+## 정리
+
+GrahpQL은 기존 REST API의 단점을 보완하는 성능적인 장점을 가지고 있습니다. 또한 RESTAPI에서는 Swagger와 같은 라이브러리를 사용해서 API 명세서를 공유하는 것이 최선이었지만 GraphQL에서는 이를 인트로스펙션으로 대체하여 프론트엔드와 백엔드간 협업이 더 쉬워질 것으로 생각됩니다. 그러나 비교적 프론트엔드쪽에 할일이 많아질것이라고 생각합니다.
