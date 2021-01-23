@@ -120,6 +120,7 @@ docker commit [Container ID] [new Image name]:[tag]
 - Dockerfile
   - 이미지 생성 과정을 기술한 Docker 전용 DSL
   - Dockerfile 명령어
+  
 ```
 FROM [Base Image] : 베이스 이미지 지정
 
@@ -135,23 +136,28 @@ EXPOSE [포트번호] : 컨테이너 실행 시 노출시킬 포트 (expose를 �
 
 CMD [명령어] : 이미지의 기본 명령어 설정
 ```
+
 - Dockerfile에 작성된 이미지 빌드
 ```
 docker build -t [ID]/[new image name]:[tag] .
 ```
+
   - . : 해당 경로 하위 파일들을 모두 이미지로 생성
 
 ### 이미지 이름 변경
+
 ```
 docekr tag [image name] [new image name]
 ```
 
 ### 이미지 삭제
+
 ```
 docker rmi [image name]
 ```
 
 ### Docker registry에서 이미지 받아오기
+
 ```
 docker pull [image name]
 ```
