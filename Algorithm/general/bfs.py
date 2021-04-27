@@ -10,7 +10,7 @@ def bfs(graph, start, visited):
         print(v, end=' ') # 노드를 출력한다.
 
         for node in graph[v]: #출력한 노드에 인접한 노드들을 확인한다.
-            for not visited[node]: #인접한 노드의 방문처리여부를 확인한다.
+            if not visited[node]: #인접한 노드의 방문처리여부를 확인한다.
                 queue.append(node) #방문처리되지 않았다면 큐에 넣고
                 visited[node] = True #방문처리해준다.
 graph = [
@@ -28,3 +28,23 @@ graph = [
 visited = [False] * 9
 
 bfs(graph, 1, visited) #그래프, 시작노드, 방문처리할 배열
+
+
+
+# 새로운 bfs 코드
+def bfs(graph, start_node):
+    visited = list()
+    need_visit = list()
+
+    need_visit.append(start_node)
+
+    while need_visit:
+        node = need_visit.pop(0)
+        if node not in visited:
+            visited.append(node)
+            need_visit.extend(graph[node])
+
+    return visited
+
+
+
