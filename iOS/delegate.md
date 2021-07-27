@@ -68,13 +68,15 @@ viewcontroller에서 delegate를 사용하기 위해서는 각요소의 delegate
 실제 코드)
 
 ```swift
+
+
 import UIKit
 
 class HomeViewController: UIViewController {
     
+    /// Receiver
     private let tableView: UITableView = {
         let tableView = UITableView()
-        
         return tableView
     }()
     
@@ -82,6 +84,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
+        // 위에서 선언한 tableView객체를 delegate에게 보낸다.
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -93,6 +96,8 @@ class HomeViewController: UIViewController {
 
 }
 
+/// Delegate
+// 이렇게 extension으로 protocol을 확장하고 메서드를 구현하여 사용하기도 한다.
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 0
