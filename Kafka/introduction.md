@@ -38,3 +38,40 @@
   - Controller
     - 각 프로커에게 담당파티션 할당
     - 브로커 정상 동작 모니터링
+
+### Record
+```java
+new ProducerRecord<String, String>("topic", "key", "message);
+```
+
+```java
+ConsumerRecords<String, String> records = consumer.poll(1000);
+for (ConsumerRecord<String, String> record : records) {
+  ...
+}
+```
+
+객체를 byte형태로 저장하기 위해 **Serialize/Deserialize** 필요
+
+* Serializer
+- 기본으로 String Serializer를 제공
+- 다양하게 Custom하여 사용
+ex) key = null, value = json formatting
+
+### Topic & Partition
+
+<img src="../Image/kafkatopic.png">
+
+- 메시지 분류 단위
+-  n개의 파티션 할당 가능
+-  각 파티션마다 고유한 오프셋(offset)을 가짐
+-  메시지 처리순서는 파티션별로 유지 관리됨
+*Queue(FIFO) 구조로 파티션에 데이터가 들어가지만 정확하게 FIFO 구조로 데이터입출력이 이루어지지는 않음
+
+### Kafka log and segment
+- 실제로 저장은 파일시스템으로 not a DB
+- 메시지가 저장될때는 세그먼트파일이 열려있음
+- 세그먼트는 시간 또는 크기 기준으로 닫히고, 닫힌 이후 일정 시간에 압축, 삭제됨
+* 일정시간이 지나면 데이터가 사라짐
+
+
