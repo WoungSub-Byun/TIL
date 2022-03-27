@@ -23,6 +23,7 @@
 
 1. High throughout messaging capacity
 
+<<<<<<< HEAD
 - 짧은 시간안에 데이터의 처리 가능
 
 2. Scalability와 fault tolerent : 확장성과 고가용성
@@ -40,3 +41,52 @@
 - 하지만 소규모의 스타트업에서도 사용하는 것을 추천한다.
   그 이유는 바로 **확장성과** **고가용성**에 있다.
   스타트업은 급속도로 성장할 수 있기 때문에 높은 확장성을 필요로 한다. Kafka는 broker를 통해 쉽게 확장시킬 수 있고 만약 브로커에 문제가 생기더라도 replication을 통해서 쉽게 복구가 가능하기 때문에 쉽게 도입할 수 있다.
+=======
+### Kafka broker
+- 실행된 카프카 애플리케이션 서버 중 1대
+- 3대 이상의 브로커로 클러스터 구성
+- Zookeeper와 연동필요
+  - Zookeeper(Apache Zookeeper)
+    - Kafka 메타데이터 저장
+- 브로커 중 1대는 컨트롤러 기능 수행
+  - Controller
+    - 각 프로커에게 담당파티션 할당
+    - 브로커 정상 동작 모니터링
+
+### Record
+```java
+new ProducerRecord<String, String>("topic", "key", "message);
+```
+
+```java
+ConsumerRecords<String, String> records = consumer.poll(1000);
+for (ConsumerRecord<String, String> record : records) {
+  ...
+}
+```
+
+객체를 byte형태로 저장하기 위해 **Serialize/Deserialize** 필요
+
+* Serializer
+- 기본으로 String Serializer를 제공
+- 다양하게 Custom하여 사용
+ex) key = null, value = json formatting
+
+### Topic & Partition
+
+<img src="../Image/kafkatopic.png">
+
+- 메시지 분류 단위
+-  n개의 파티션 할당 가능
+-  각 파티션마다 고유한 오프셋(offset)을 가짐
+-  메시지 처리순서는 파티션별로 유지 관리됨
+*Queue(FIFO) 구조로 파티션에 데이터가 들어가지만 정확하게 FIFO 구조로 데이터입출력이 이루어지지는 않음
+
+### Kafka log and segment
+- 실제로 저장은 파일시스템으로 not a DB
+- 메시지가 저장될때는 세그먼트파일이 열려있음
+- 세그먼트는 시간 또는 크기 기준으로 닫히고, 닫힌 이후 일정 시간에 압축, 삭제됨
+* 일정시간이 지나면 데이터가 사라짐
+
+
+>>>>>>> 8cb5216a43ac366ada7b0a4bb8116b173c2041dd
