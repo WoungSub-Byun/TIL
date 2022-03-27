@@ -25,7 +25,7 @@
 
 - 짧은 시간안에 데이터의 처리 가능
 
-2. Scalability와 fluent tolerent : 확장성과 고가용성
+2. Scalability와 fault tolerent : 확장성과 고가용성
 
 - broker와 replication을 활용하여 쉽게 확장할 수 있고 브로커가 죽더라도 복제된 다른 브로커에서 쉽게 복구가 가능하다.
 
