@@ -6,7 +6,7 @@
     - [MySQL Variable](Database/mysql-variable.md)
     - [ORM이란](Database/ORM.md)
     - [인덱스](Database/DB-index.md)
-- [Datascience & AI](Datascience & AI/README.md)
+- [Datascience & AI](Datascience&AI/README.md)
 - [Dev-Backend](Dev-Backend/README.md)
 - [Dev-Backend](Dev-Backend/README.md)
 - [ETC](ETC/README.md)
