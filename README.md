@@ -1,10 +1,4 @@
-5# 웅섭's Today I Learned
+# WoungSub-Devlog
 
--  오늘 배운 것들은 오늘 적자
+- *'오늘 배운 것들은 오늘 적자'*라는 모토를 가지고 공부한 내용을 정리한 공간입니다.
   
-![img](https://i1.daumcdn.net/thumb/C300x240/?fname=https://blog.kakaocdn.net/dn/3H0pg/btqEAMKeaky/UIxtAXObYwrlnsvTY1WdY0/img.jpg) 
-### 작성규칙
----
- - 오늘 하루 배운 것들을 적기
- - 주 4회 이상 꼭 작성하기 (꾸준함을 지킨다)
- - 언제 봐도 이해하고 상기시킬 수 있도록 작성하기
