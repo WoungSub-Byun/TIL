@@ -42,7 +42,7 @@ Apache Server, Nginx, IIS 등
 >웹 애플리케이션을 실행하여 필요한 기능을 수행하고 그 결과를 웹 서버에 전달하는 **미들웨어**
 
 - 구성
-![wascomponent](./wascomponent.png)
+![wascomponent](../Image/wascomponent.png)
 **WAS = Web Server + Web Container**
 
 **동작방식**
