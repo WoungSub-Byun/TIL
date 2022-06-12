@@ -1,6 +1,6 @@
 # Summary
 
-- [Intro] (README.md)
+- [Intro](README.md)
 - [Database](Database/README.md)
     - [DB connection pool](Database/db-connection-pool.md)
     - [MySQL Variable](Database/mysql-variable.md)
