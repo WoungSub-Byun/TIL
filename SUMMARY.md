@@ -121,7 +121,7 @@
   - [typescript](./Programming/typescript/README.md)
     - [Typescript.md](./Programming/typescript/typescript.md)
   - [Underscore-in-code.md](./Programming/underscore-in-code.md)
-- [Readme.md](./README.md)
+- [Intro](./README.md)
 - [Seminar](./Seminar/README.md)
   - [우테코-테코톡](./Seminar/우테코-테코톡/README.md)
     - [Web-was.md](./Seminar/우테코-테코톡/WEB-WAS.md)

@@ -33,7 +33,7 @@ def append_content(path: str, component: str, depth: int, type: str):
     global content
     if component == "README.md":
         text = "  " * depth + "- [{}]({})\n".format("Intro", path + component)
-    if type == "dir":
+    elif type == "dir":
         text = "  " * depth + "- [{}]({}/README.md)\n".format(
             component, path + component
         )
